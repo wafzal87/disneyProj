@@ -8,7 +8,7 @@ import com.disney.test.base.Controller;
 
 public class DisneySitepage extends Controller{
 
-	
+	//*[@id='goc-bar-left']/li[3]
 	@FindBy(xpath="//*[@id='goc-bar-left']/li[3]")
 	WebElement shopLink;
 	
@@ -27,7 +27,8 @@ public class DisneySitepage extends Controller{
 		return disneyTitle.isDisplayed();
 	}
 	
-	public ShopDisneyPage NavigateToShop() {
+	public ShopDisneyPage NavigateToShop() throws InterruptedException {
+		Thread.sleep(10000);
 		shopLink.click();
 		return new ShopDisneyPage();
 	}

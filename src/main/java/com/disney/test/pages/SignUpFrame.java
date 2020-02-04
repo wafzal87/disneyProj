@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.disney.test.base.Controller;
+import com.disney.test.util.ShopPageData;
 
 public class SignUpFrame extends Controller{
 	
@@ -33,9 +34,8 @@ public class SignUpFrame extends Controller{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement submitButton;
 	
-	@FindBy(xpath = "//button[text()='Continue'")
+	@FindBy(xpath = "//button[text()='Continue']")
 	WebElement continueButton;
-	
 	
 	//Initialize page elements
 	public SignUpFrame(){
@@ -48,8 +48,8 @@ public class SignUpFrame extends Controller{
 		createAccountButton.click();
 	}
 	
-	public void createNewAccount(String fname, String lname, String pw, 
-			String vpw, String email, String dob ) {
+	public void createNewAccount(String fname, String lname, String email, String pw, 
+			String vpw, String dob ) {
 		
 		firstName.sendKeys(fname);
 		lastName.sendKeys(lname);

@@ -9,6 +9,15 @@ public class ShopPageData {
 	private String dateOfBirth;
 	private String navElements;
 
+	public ShopPageData(String firstName, String lastName, String email, String password, String dateOfBirth) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.dateOfBirth = dateOfBirth;
+	}
+			
 	public ShopPageData(String firstName, String lastName, String email, String password, String phNumber,
 			String navElements) {
 		super();

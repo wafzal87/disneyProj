@@ -23,7 +23,7 @@ public class DisneySitePageTest extends Controller{
 	}
 	
 	@Test
-	public void onClick() {
+	public void onClick() throws InterruptedException {
 		disneypage.NavigateToShop();
 	}
 	
