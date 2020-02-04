@@ -8,7 +8,6 @@ import com.disney.test.base.Controller;
 
 public class DisneySitepage extends Controller{
 
-	//*[@id='goc-bar-left']/li[3]
 	@FindBy(xpath="//*[@id='goc-bar-left']/li[3]")
 	WebElement shopLink;
 	

@@ -18,15 +18,8 @@ public class ShopPageTest extends Controller{
 	
 	String[] headers = { "FirstName", "LastName", "Email", "Password", "PhoneNo", "NavElements" };
 	String[] loginInfo = { "waf", "afz", "wafz"+System.currentTimeMillis()+"@email.com", "Password123", "01/01/31"};
-	String xpath= "//a[@class='nav-link dropdown-toggle']";
+	public static String XPATH= "//a[@class='nav-link dropdown-toggle']";
 	public static String FILE_PATH ="/Users/wafzal/Documents/disneyqaresults.csv";
-	
-	/*String fname= elements[0].toString();
-	String lname = elements[1].toString();
-	String pwd=  elements[3].toString();
-	String vpwd= elements[3].toString();
-	String email=  elements[2].toString();
-	String dob= elements[4].toString();*/
 	
 	DisneySitepage disneypage;
 	ShopDisneyPage shopDisneyPage;
@@ -70,20 +63,16 @@ public class ShopPageTest extends Controller{
 		Thread.sleep(3000);
 		driver.switchTo().defaultContent();
 		
-		 List<String> navElements = shopDisneyPage.getNavElements(xpath);
-		 //elements[5] = navElements.toString();
-		
-//		 ArrayList<String> elements = new ArrayList<String>();
-//		elements.addAll(Arrays.asList(loginInfo));
-//		elements.add(navElements.toString());
-//		
+		 List<String> navElements = shopDisneyPage.getNavElements(XPATH);
 		
 		String[] elements = new String[loginInfo.length + 1];
 		elements[loginInfo.length] = navElements.toString();
 		for (int i=0; i<loginInfo.length; i++) {
 			elements[i] = loginInfo[i];
 		}
-	    DisneyTestUtility.writeDataLineByLine(FILE_PATH, headers, elements) ;
+	    DisneyTestUtility.writeDataLineByLine(FILE_PATH, headers, elements);
+	    
+	    shopDisneyPage.clickLogOut();
 	}
 	
 	

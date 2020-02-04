@@ -11,10 +11,10 @@ public class SignInFrame extends Controller {
 	@FindBy(xpath="//input[@type='email']")
 	WebElement username;
 	
-	@FindBy(xpath="//input[@type='password'")
+	@FindBy(xpath="//input[@type='password']")
 	WebElement password;
 	
-	@FindBy(xpath="//button[text()='Sign In'")
+	@FindBy(xpath="//button[text()='Sign In']")
 	WebElement signInBtn;
 	
 	public SignInFrame(){
@@ -22,10 +22,16 @@ public class SignInFrame extends Controller {
 	}
 	
 	
-	public void createNewAccount(String uname, String pwd) {
+	public void logInToAccount(String uname, String pwd) {
 		
 		username.sendKeys(uname);
 		password.sendKeys(pwd);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		signInBtn.click();
 		
 	}

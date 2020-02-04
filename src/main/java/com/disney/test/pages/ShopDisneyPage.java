@@ -9,17 +9,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.disney.test.base.Controller;
-import com.disney.test.util.DisneyTestUtility;
 
 public class ShopDisneyPage extends Controller{
 
-	public static String BEFORE_XPATH ="/html/body/div[1]/header/nav/div/div[2]/div/div/nav/div[2]/ul/li[";
-	public static String AFTER_XPATH ="]/a";
-	String xpath= "//a[@class='nav-link dropdown-toggle' and @id='vacation']";
-	//@FindBy(xpath="//a[@class='nav-link dropdown-toggle' and @id='vacation']")
-	//WebElement centerNavElements;
 	
-	@FindBy(className="user-message")
+	/*@FindBy(className="user-message")
+	WebElement singIn;*/
+	
+	@FindBy(xpath="//button[@class='signin-or-signup__button']")
 	WebElement singIn;
 	
 	@FindBy(xpath="//a[@class='signout']")
@@ -41,6 +38,12 @@ public class ShopDisneyPage extends Controller{
 	}*/
 	
 	public void clickSignIn() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		singIn.click();
 	}
 	
